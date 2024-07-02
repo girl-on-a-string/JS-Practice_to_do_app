@@ -1,0 +1,41 @@
+:root {
+    --darkest: #EAD7C2;
+    --dark: #F0E2D3;
+    --light: #F5EBE1;
+    --lightest: #FAF5F0;
+    --special: #ddb892;
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark);
+}
+
+/* all */
+
+#all {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 20px;
+    width: 100vw;
+    height: 100vh;
+    font-family: monospace;
+}
+
+#container {
+    grid-column: 5 / span 4;
+    grid-row: 5 / span 4;
+}
+
+/* interface */
+
+#interface {
+    border: 3px solid var(--darkest);
+    background-color: var(--light);
+}
+
+h1 {
+    text-align: center;
+    color: var(--special);
+}
