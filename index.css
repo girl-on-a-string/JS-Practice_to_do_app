@@ -9,6 +9,7 @@
 body {
     margin: 0;
     background-color: var(--dark);
+    color: var(--special);
 }
 
 /* all */
@@ -28,14 +29,39 @@ body {
     grid-row: 5 / span 4;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+}
+
 /* interface */
 
 #interface {
     border: 3px solid var(--darkest);
     background-color: var(--light);
+    padding: 15px;
 }
 
 h1 {
     text-align: center;
-    color: var(--special);
 }
+
+#add {
+    text-align: center;
+}
+
+#add p {
+    font-weight: bold;
+}
+
+#add input {
+    /* text-align: right; */
+    width: 65%;
+    border: 3px solid var(--darkest);
+    background-color: var(--lightest);
+}
+
+/* #add button svg {
+    width: 50px;
+    height: 50px;
+} */
