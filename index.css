@@ -29,9 +29,12 @@ body {
     grid-row: 5 / span 4;
 }
 
-button {
-    background-color: transparent;
-    border: none;
+#add button {
+    border-radius: 5px;
+    border: 3px solid var(--darkest);
+    color: var(--special);
+    background-color: var(--lightest);
+    font-weight: bold;
 }
 
 /* interface */
@@ -40,6 +43,7 @@ button {
     border: 3px solid var(--darkest);
     background-color: var(--light);
     padding: 15px;
+    border-radius: 20px;
 }
 
 h1 {

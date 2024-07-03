@@ -15,14 +15,15 @@
             <div id="interface">
                 <header><h1>To Do List:</h1></header>
                 <main>
-                    <div id="add">
+                    <form id="add">
                         <p>Add a task:</p>
-                        <input type="text">
-                    </div>
+                        <input id="input" type="text" onchange="createTask()">
+                        <button type="submit" onclick="createTask()">Add Task</button>
+                    </form>
                     <div id="content">
-                        <ul id="list">
-                            
-                        </ul>
+                        <list id="list">
+
+                        </list>
                     </div>
                     <!-- <div id="add">
                         <button id="add-task" onclick="createTask()">
