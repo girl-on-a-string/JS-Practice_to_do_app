@@ -30,12 +30,17 @@ function createTask () {
     // add checkbox and label
 
     let checkbox = document.createElement("input");
-    checkbox = checkbox.type = "checkbox";
+
+    checkbox.type = "checkbox";
+    checkbox.value = "";
+    checkbox.name = "completion-status";
+
     let label = document.createElement("label");
     label.value = "";
 
     //append checkbox and label to div
 
+    listItem.append(checkbox);
     listItem.appendChild(label);
 
     // add inner text to label
