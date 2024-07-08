@@ -23,9 +23,12 @@ function createTask () {
     //     alert("Please input a task before submitting!");
     //     console.log(false);
     // }
-    const taskInput = document.getElementById("input").value;
 
-    let listText = taskInput;
+    // document.getElementById("input").addEventListener("submit", () => {
+    //     add.preventDefault();
+    // });
+
+    let listText = document.getElementById("input").value;
     const listItem = document.createElement("li");
     listItem.innerHTML = listText;
     list.appendChild(listItem);
@@ -34,6 +37,11 @@ function createTask () {
     console.log("received input");
 
 }
+
+add.addEventListener("submit", (e) => {
+    e.preventDefault();
+    createTask();
+});
 
 //populate interface with task
 
