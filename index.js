@@ -10,24 +10,6 @@ const list = container.querySelector("#list");
 //create task
 
 function createTask () {
-    // let listText = document.createTextNode(taskInput);
-    // listText = listText.innerText = `${listText}`;
-
-
-    // if (listText !== "") {
-    //     const listItem = document.createElement("li");
-    //     list.appendChild(listItem);
-    //     listItem.innerText = listText;
-    //     console.log(true);
-    // } else if (listText === "") {
-    //     alert("Please input a task before submitting!");
-    //     console.log(false);
-    // }
-
-    // document.getElementById("input").addEventListener("submit", () => {
-    //     add.preventDefault();
-    // });
-
     let listText = document.getElementById("input").value;
     const listItem = document.createElement("li");
     listItem.innerHTML = listText;
@@ -41,6 +23,7 @@ function createTask () {
 add.addEventListener("submit", (e) => {
     e.preventDefault();
     createTask();
+    addTask.value = null;
 });
 
 //populate interface with task
