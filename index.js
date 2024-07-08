@@ -11,10 +11,12 @@ const list = container.querySelector("#list");
 
 function createTask () {
     console.log("received input");
+
     let listText = document.getElementById("input").value;
     const listItem = document.createElement("li");
     listItem.innerHTML = listText;
     list.appendChild(listItem);
+
     console.log(true);
 }
 
@@ -22,6 +24,7 @@ function createTask () {
 
 add.addEventListener("submit", (e) => {
     if (addTask.value == "" || addTask.value == null) {
+        e.preventDefault();
         alert("You can't have an empty task!");
     } else {
         e.preventDefault();
