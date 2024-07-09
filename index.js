@@ -18,18 +18,26 @@ function createTask () {
     // listItem.innerHTML = listText;
     // list.appendChild(listItem);
 
-    // create div container
+    // create main task div container
 
     const taskContainer = document.getElementById("tasks");
 
     let listText = document.getElementById("input").value;
     const listItem = document.createElement("div");
     listItem.classList.add("list-item");
+    listItem.style.display = "flex";
+    listItem.style.justifyContent = "space-between";
     taskContainer.appendChild(listItem);
+
+    //create secondary div container for checkbox and label
+
+    let secondaryDiv = document.createElement("div");
+    listItem.appendChild(secondaryDiv);
 
     // add checkbox and label
 
     let checkbox = document.createElement("input");
+    checkbox.classList.add("checkbox");
 
     checkbox.type = "checkbox";
     checkbox.value = "";
@@ -40,16 +48,36 @@ function createTask () {
 
     //append checkbox and label to div
 
-    listItem.append(checkbox);
-    listItem.appendChild(label);
+    secondaryDiv.append(checkbox);
+    secondaryDiv.appendChild(label);
 
     // add inner text to label
 
     label.innerText = listText;
 
+    // delete icon creation and handling
+
+    let deleteIcon = document.createElement("i");
+    deleteIcon.classList.add("material-icons");
+    deleteIcon.innerHTML = "&#xe872;";
+
+    listItem.appendChild(deleteIcon);
+
     // validate request
 
     console.log(true);
+}
+
+// completion 
+
+function completeTask () {
+
+}
+
+//deletion
+
+function deleteTask () {
+
 }
 
 //display task or throw error

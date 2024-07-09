@@ -59,8 +59,13 @@ h1 {
 }
 
 #add input {
-    /* text-align: right; */
     width: 65%;
     border: 3px solid var(--darkest);
     background-color: var(--lightest);
+}
+
+/* form styling */
+
+#tasks {
+    margin: 10px;
 }
