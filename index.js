@@ -8,15 +8,12 @@ const addTask = container.querySelector("#input");
 
 const list = container.querySelector("#list");
 
+let deleteIcon = document.createElement("i");
+
 //create task
 
 function createTask () {
     console.log("received input");
-
-    // let listText = document.getElementById("input").value;
-    // const listItem = document.createElement("li");
-    // listItem.innerHTML = listText;
-    // list.appendChild(listItem);
 
     // create main task div container
 
@@ -55,29 +52,22 @@ function createTask () {
 
     label.innerText = listText;
 
-    // delete icon creation and handling
+    // delete buttn creation and handling
 
-    let deleteIcon = document.createElement("i");
+    let deleteBtn = document.createElement("button");
+    deleteBtn.appendChild(deleteIcon);
+    listItem.appendChild(deleteBtn);
+
     deleteIcon.classList.add("material-icons");
     deleteIcon.innerHTML = "&#xe872;";
 
-    listItem.appendChild(deleteIcon);
+    deleteBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+    });
 
     // validate request
 
     console.log(true);
-}
-
-// completion 
-
-function completeTask () {
-
-}
-
-//deletion
-
-function deleteTask () {
-
 }
 
 //display task or throw error
@@ -92,3 +82,12 @@ add.addEventListener("submit", (e) => {
         addTask.value = null;
     }
 });
+
+// deletion and completion
+
+function deleteTask () {
+    deleteIcon.addEventListener("click", () => {
+        listItem.style.textDecoration = "line-through";
+        return true;
+    });
+}

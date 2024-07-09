@@ -69,3 +69,7 @@ h1 {
 #tasks {
     margin: 10px;
 }
+
+#tasks i {
+    cursor: pointer;
+}
