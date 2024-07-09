@@ -15,12 +15,8 @@ function createTask () {
 
     console.log("received input");
 
-    // create main task div container
+    //add input text to listitem
 
-    const taskContainer = document.getElementById("tasks");
-
-    let listText = document.getElementById("input").value;
-    const listItem = document.createElement("div");
     listItem.classList.add("list-item");
     listItem.style.display = "flex";
     listItem.style.justifyContent = "space-between";
@@ -31,14 +27,7 @@ function createTask () {
     let secondaryDiv = document.createElement("div");
     listItem.appendChild(secondaryDiv);
 
-    // add checkbox and label
-
-    let checkbox = document.createElement("input");
-    checkbox.classList.add("checkbox");
-
-    checkbox.type = "checkbox";
-    checkbox.value = "";
-    checkbox.name = "completion-status";
+    // add label
 
     let label = document.createElement("label");
     label.value = "";
@@ -50,12 +39,14 @@ function createTask () {
 
     // add inner text to label
 
+    let listText = document.getElementById("input").value;
     label.innerText = listText;
 
     // delete buttn and icon creation and handling
 
     let deleteIcon = document.createElement("i");
     let deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("delete-btn");
     deleteBtn.appendChild(deleteIcon);
 
     listItem.appendChild(deleteBtn);
@@ -65,6 +56,7 @@ function createTask () {
 
     deleteBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        console.log(true);
     });
 
     // validate request
@@ -82,14 +74,24 @@ add.addEventListener("submit", (e) => {
         e.preventDefault();
         createTask();
         addTask.value = null;
+        completeTask();
+        deleteTask();
     }
 });
 
-// deletion and completion
+//complate task 
+
+function completeTask () {
+    checkbox.addEventListener("click", () => {
+        listItem.style.textDecoration = "line-through";
+        return true;
+    })
+}
+
+// delete task
 
 function deleteTask () {
     deleteIcon.addEventListener("click", () => {
-        listItem.style.textDecoration = "line-through";
         return true;
     });
 }
