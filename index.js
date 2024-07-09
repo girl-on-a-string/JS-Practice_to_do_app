@@ -17,6 +17,9 @@ function createTask () {
 
     //add input text to listitem
 
+    let listItem = document.createElement("div");
+    let taskContainer = document.querySelector("#tasks");
+
     listItem.classList.add("list-item");
     listItem.style.display = "flex";
     listItem.style.justifyContent = "space-between";
@@ -26,6 +29,15 @@ function createTask () {
 
     let secondaryDiv = document.createElement("div");
     listItem.appendChild(secondaryDiv);
+
+    //create checkbox
+
+    let checkbox = document.createElement("input");
+    checkbox.classList.add("checkbox");
+
+    checkbox.type = "checkbox";
+    checkbox.value = "";
+    checkbox.name = "completion-status";
 
     // add label
 
@@ -82,6 +94,7 @@ add.addEventListener("submit", (e) => {
 //complate task 
 
 function completeTask () {
+    let checkbox = document.querySelector(".checkbox");
     checkbox.addEventListener("click", () => {
         listItem.style.textDecoration = "line-through";
         return true;
@@ -91,6 +104,7 @@ function completeTask () {
 // delete task
 
 function deleteTask () {
+    let deleteIcon = document.querySelector(".material-icons");
     deleteIcon.addEventListener("click", () => {
         return true;
     });
