@@ -8,11 +8,11 @@ const addTask = container.querySelector("#input");
 
 const list = container.querySelector("#list");
 
-let deleteIcon = document.createElement("i");
-
 //create task
 
 function createTask () {
+    //confirm request
+
     console.log("received input");
 
     // create main task div container
@@ -52,10 +52,12 @@ function createTask () {
 
     label.innerText = listText;
 
-    // delete buttn creation and handling
+    // delete buttn and icon creation and handling
 
+    let deleteIcon = document.createElement("i");
     let deleteBtn = document.createElement("button");
     deleteBtn.appendChild(deleteIcon);
+
     listItem.appendChild(deleteBtn);
 
     deleteIcon.classList.add("material-icons");
