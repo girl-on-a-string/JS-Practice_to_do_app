@@ -95,17 +95,20 @@ add.addEventListener("submit", (e) => {
 
 function completeTask () {
     let checkbox = document.querySelector(".checkbox");
+    checkbox.value = "unchecked";
 
     let strike = document.createElement("div");
     strike.classList.add("strike");
 
-    checkbox.addEventListener("click", () => {
+    checkbox.addEventListener("change", () => {
+        checkbox.value = "checked";
+
         let listItem = document.querySelector(".list-item");
         listItem.appendChild(strike);
 
         strike.style.animationPlayState = "running";
 
-        return true;
+        console.log(true);
     });
 }
 

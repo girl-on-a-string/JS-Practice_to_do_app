@@ -76,6 +76,8 @@ h1 {
 
 .list-item {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .strike {
