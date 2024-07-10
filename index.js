@@ -95,10 +95,18 @@ add.addEventListener("submit", (e) => {
 
 function completeTask () {
     let checkbox = document.querySelector(".checkbox");
+
+    let strike = document.createElement("div");
+    strike.classList.add("strike");
+
     checkbox.addEventListener("click", () => {
-        listItem.style.textDecoration = "line-through";
+        let listItem = document.querySelector(".list-item");
+        listItem.appendChild(strike);
+
+        strike.style.animationPlayState = "running";
+
         return true;
-    })
+    });
 }
 
 // delete task
