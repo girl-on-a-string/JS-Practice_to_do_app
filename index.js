@@ -100,15 +100,25 @@ function completeTask () {
     let strike = document.createElement("div");
     strike.classList.add("strike");
 
-    checkbox.addEventListener("change", () => {
+    let listItem = document.querySelector(".list-item");
+
+    checkbox.addEventListener("click", () => {
         checkbox.value = "checked";
 
-        let listItem = document.querySelector(".list-item");
         listItem.appendChild(strike);
 
         strike.style.animationPlayState = "running";
 
         console.log(true);
+
+        // switch (checkbox) {
+        //     case (checkbox.value = "checked"): 
+        //         listItem.appendChild(strike);
+        //         strike.style.animationPlayState = "running";
+        //         console.log(true);
+        //         break;
+        //     case "":
+        // }
     });
 }
 
