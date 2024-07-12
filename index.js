@@ -31,14 +31,27 @@ function createTask () {
     let secondaryDiv = document.createElement("div");
     listItem.appendChild(secondaryDiv);
 
-    //create checkbox
+    //create checkbox + checkbox handling
 
     let checkbox = document.createElement("input");
     checkbox.classList.add("checkbox");
 
     checkbox.type = "checkbox";
-    checkbox.value = "";
+    checkbox.value = "unchecked";
     checkbox.name = "completion-status";
+
+    let strike = document.createElement("div");
+    strike.classList.add("strike");
+
+    checkbox.addEventListener("click", () => {
+        checkbox.value = "checked";
+
+        listItem.appendChild(strike);
+
+        strike.style.animationPlayState = "running";
+
+        console.log(true);
+    });
 
     // add label
 
@@ -87,52 +100,7 @@ add.addEventListener("submit", (e) => {
     } else {
         e.preventDefault();
         createTask();
-        completeTask();
+        //completeTask();
         addTask.value = null;
     }
 });
-
-
-//complate task 
-
-function completeTask () {
-    let listItem = document.querySelector(".list-item");
-    let checkbox = document.querySelector(".checkbox");
-
-    checkbox.value = "unchecked";
-
-    let strike = document.createElement("div");
-    strike.classList.add("strike");
-
-    checkbox.addEventListener("click", () => {
-        checkbox.value = "checked";
-
-        listItem.appendChild(strike);
-
-        strike.style.animationPlayState = "running";
-
-        console.log(true);
-
-        // listItem.style.bottom = 0;
-
-        // switch (checkbox) {
-        //     case (checkbox.value = "checked"): 
-        //         listItem.appendChild(strike);
-        //         strike.style.animationPlayState = "running";
-        //         console.log(true);
-        //         break;
-        //     case "":
-        // }
-    });
-}
-
-// delete task
-
-// function deleteTask () {
-//     let deleteBtn = document.querySelector(".delete-btn");
-//     let listItem = document.querySelector(".list-item");
-//     deleteBtn.addEventListener("click", () => {
-//         listItem.remove();
-//         return true;
-//     });
-// }
