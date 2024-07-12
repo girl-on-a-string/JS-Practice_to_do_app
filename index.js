@@ -57,11 +57,8 @@ function createTask () {
         lastItem.classList.add("last-child");
         lastItem.appendChild(completedListItem);
 
-        // while (checkbox.value = "checked") {
-        //     taskContainer.style.position = "relative";
-        //     listItem.style.position = "absolute";
-        //     listItem.style.bottom = 0;
-        // }
+        let completedCounter = container.querySelector("#completed");
+        let completeAmt = document.querySelector("completed-amt");
 
         console.log(true);
     });
@@ -97,6 +94,9 @@ function createTask () {
         e.preventDefault();
         listItem.remove();
         console.log(true);
+
+        let incompleteCounter = container.querySelector("#incompleted-amt");
+        let incompleteAmt = document.querySelector("incompleted-amt");
     });
 
     // validate request

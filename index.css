@@ -14,6 +14,10 @@ body {
 
 /* all */
 
+hr {
+    border: 1px solid var(--darkest);
+}
+
 #all {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -105,4 +109,5 @@ h1 {
 
 #status {
     display: flex;
+    justify-content: center;
 }
