@@ -100,3 +100,9 @@ h1 {
         }
     }
 }
+
+/* status section */
+
+#status {
+    display: flex;
+}

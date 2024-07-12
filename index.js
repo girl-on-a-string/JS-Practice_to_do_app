@@ -50,6 +50,19 @@ function createTask () {
 
         strike.style.animationPlayState = "running";
 
+        let completedListItem = listItem.getElementsByClassName("strike");
+       // let allListItems = taskContainer.getElementsByClassName("list-item");
+        // let lastItem = allListItems[allListItems.length-1];
+        let lastItem = taskContainer.lastChild;
+        lastItem.classList.add("last-child");
+        lastItem.appendChild(completedListItem);
+
+        // while (checkbox.value = "checked") {
+        //     taskContainer.style.position = "relative";
+        //     listItem.style.position = "absolute";
+        //     listItem.style.bottom = 0;
+        // }
+
         console.log(true);
     });
 
