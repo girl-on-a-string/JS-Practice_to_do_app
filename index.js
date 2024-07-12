@@ -8,6 +8,8 @@ const addTask = container.querySelector("#input");
 
 const list = container.querySelector("#list");
 
+let taskContainer = document.querySelector("#tasks");
+
 //create task
 
 function createTask () {
@@ -18,7 +20,6 @@ function createTask () {
     //add input text to listitem
 
     let listItem = document.createElement("div");
-    let taskContainer = document.querySelector("#tasks");
 
     listItem.classList.add("list-item");
     listItem.style.display = "flex";
@@ -68,6 +69,7 @@ function createTask () {
 
     deleteBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        listItem.remove();
         console.log(true);
     });
 
@@ -85,22 +87,22 @@ add.addEventListener("submit", (e) => {
     } else {
         e.preventDefault();
         createTask();
-        addTask.value = null;
         completeTask();
-        deleteTask();
+        addTask.value = null;
     }
 });
+
 
 //complate task 
 
 function completeTask () {
+    let listItem = document.querySelector(".list-item");
     let checkbox = document.querySelector(".checkbox");
+
     checkbox.value = "unchecked";
 
     let strike = document.createElement("div");
     strike.classList.add("strike");
-
-    let listItem = document.querySelector(".list-item");
 
     checkbox.addEventListener("click", () => {
         checkbox.value = "checked";
@@ -110,6 +112,8 @@ function completeTask () {
         strike.style.animationPlayState = "running";
 
         console.log(true);
+
+        // listItem.style.bottom = 0;
 
         // switch (checkbox) {
         //     case (checkbox.value = "checked"): 
@@ -124,9 +128,11 @@ function completeTask () {
 
 // delete task
 
-function deleteTask () {
-    let deleteIcon = document.querySelector(".material-icons");
-    deleteIcon.addEventListener("click", () => {
-        return true;
-    });
-}
+// function deleteTask () {
+//     let deleteBtn = document.querySelector(".delete-btn");
+//     let listItem = document.querySelector(".list-item");
+//     deleteBtn.addEventListener("click", () => {
+//         listItem.remove();
+//         return true;
+//     });
+// }
