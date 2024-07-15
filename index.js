@@ -22,6 +22,7 @@ function createTask () {
     let listItem = document.createElement("div");
 
     listItem.classList.add("list-item");
+    listItem.classList.add("incomplete");
     listItem.style.display = "flex";
     listItem.style.justifyContent = "space-between";
     taskContainer.appendChild(listItem);
@@ -44,7 +45,11 @@ function createTask () {
     strike.classList.add("strike");
 
     checkbox.addEventListener("click", () => {
+        taskStatus();
+
         checkbox.value = "checked";
+        listItem.classList.remove("incomplete");
+        listItem.classList.add("complete");
 
         listItem.appendChild(strike);
 
@@ -55,10 +60,7 @@ function createTask () {
         // let lastItem = allListItems[allListItems.length-1];
         let lastItem = taskContainer.lastChild;
         lastItem.classList.add("last-child");
-        lastItem.appendChild(completedListItem);
-
-        let completedCounter = container.querySelector("#completed");
-        let completeAmt = document.querySelector("completed-amt");
+        //lastItem.appendChild(completedListItem);
 
         console.log(true);
     });
@@ -94,14 +96,28 @@ function createTask () {
         e.preventDefault();
         listItem.remove();
         console.log(true);
-
-        let incompleteCounter = container.querySelector("#incompleted-amt");
-        let incompleteAmt = document.querySelector("incompleted-amt");
     });
+
+    //update task status
+
+    // taskStatus();
 
     // validate request
 
     console.log(true);
+}
+
+function taskStatus () {
+    let completeAmt = document.querySelector("#completed-amt")
+    let numComplete = taskContainer.querySelectorAll(".complete").length;
+    numComplete += 1;
+    
+    completeAmt.innerHTML = numComplete;
+
+    let incompleteAmt = document.querySelector("#incompleted-amt");
+    let numIncomplete = taskContainer.querySelectorAll(".incomplete").length;
+
+    incompleteAmt.innerHTML = numIncomplete;
 }
 
 //display task or throw error
