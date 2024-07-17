@@ -1,5 +1,7 @@
 //variables 
 
+//general
+
 const all = document.querySelector("#all");
 const container = all.querySelector("#container");
 const add = all.querySelector("#add");
@@ -108,16 +110,19 @@ function createTask () {
 }
 
 function taskStatus () {
-    let completeAmt = document.querySelector("#completed-amt")
+    let completeAmt = document.querySelector("#completed-amt");
     let numComplete = taskContainer.querySelectorAll(".complete").length;
-    numComplete += 1;
-    
-    completeAmt.innerHTML = numComplete;
 
     let incompleteAmt = document.querySelector("#incompleted-amt");
     let numIncomplete = taskContainer.querySelectorAll(".incomplete").length;
 
+    completeAmt.innerHTML = numComplete;
+
     incompleteAmt.innerHTML = numIncomplete;
+
+    while (document.getElementsByClassName("complete") == true) {
+        incompleteAmt -= 1;
+    }
 }
 
 //display task or throw error
