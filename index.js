@@ -72,6 +72,12 @@ function createTask () {
         lastItem.classList.add("last-child");
         //lastItem.appendChild(completedListItem);
 
+
+        if (listItem.classList.contains("complete") == true) {
+            editIcon.innerHTML = "edit_off";
+            console.log("yes");
+        }
+
         console.log(true);
     });
 
@@ -101,6 +107,12 @@ function createTask () {
 
     editIcon.classList.add("material-symbols-outlined");
     editIcon.innerHTML = "edit";
+
+    editBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        //create edit popup
+    });
 
     // delete buttn and icon creation and handling
 
