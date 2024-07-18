@@ -85,6 +85,18 @@ function createTask () {
     let listText = document.getElementById("input").value;
     label.innerText = listText;
 
+    //create edit button 
+
+    let editIcon = document.createElement("span");
+    let editBtn = document.createElement("button");
+    editBtn.classList.add("edit-btn");
+    editBtn.appendChild(editIcon);
+
+    listItem.appendChild(editBtn);
+
+    editIcon.classList.add("material-symbols-outlined");
+    editIcon.innerHTML = "edit";
+
     // delete buttn and icon creation and handling
 
     let deleteIcon = document.createElement("i");
