@@ -72,11 +72,14 @@ function createTask () {
         lastItem.classList.add("last-child");
         //lastItem.appendChild(completedListItem);
 
+        //make task uneditable when completed
 
         if (listItem.classList.contains("complete") == true) {
             editIcon.innerHTML = "edit_off";
             console.log("yes");
         }
+
+        //validate request
 
         console.log(true);
     });
@@ -112,6 +115,35 @@ function createTask () {
         e.preventDefault();
 
         //create edit popup
+
+        let totalOverlayContainer = document.createElement("div");
+        totalOverlayContainer.setAttribute("id", "overlay-main-container");
+        totalOverlayContainer.style.display = "block";
+        add.appendChild(totalOverlayContainer);
+
+        let overlayContentBox = document.createElement("div");
+        overlayContentBox.setAttribute("id", "overlay-content-box");
+        totalOverlayContainer.appendChild(overlayContentBox);
+
+        let overlayForm = document.createElement("form");
+        overlayForm.setAttribute("id", "overlay-form");
+        overlayContentBox.appendChild(overlayForm);
+        overlayForm.addEventListener("click", (e) => {
+            e.preventDefault();
+        });
+
+        let overlayInput = document.createElement("input");
+        overlayInput.setAttribute("id", "overlay-input");
+        overlayForm.appendChild(overlayInput);
+        overlayInput = overlayInput.value;
+
+        let overlaySumbitChange = document.createElement("button");
+        overlaySumbitChange.setAttribute("id", "overlay-submit-btn");
+        overlaySumbitChange.type = "submit";
+        overlaySumbitChange.innerText = "Submit";
+        overlayForm.appendChild(overlaySumbitChange);
+
+
     });
 
     // delete buttn and icon creation and handling

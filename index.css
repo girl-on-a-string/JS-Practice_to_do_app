@@ -111,3 +111,33 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+/* overlay stuff */
+
+#overlay-main-container {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.9);
+}
+
+#overlay-content-box {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+#overlay-input {
+    float: left;
+}
+
+#overlay-submit-btn {
+    float: right;
+}
