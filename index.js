@@ -33,10 +33,15 @@ function createTask () {
 
     taskStatus();
 
-    //create secondary div container for checkbox and label
+    //create secondary div 1 container for checkbox and label
 
-    let secondaryDiv = document.createElement("div");
-    listItem.appendChild(secondaryDiv);
+    let secondaryDivOne = document.createElement("div");
+    listItem.appendChild(secondaryDivOne);
+
+    //create secondary div 2 for edit and delete icons
+
+    let secondaryDivTwo = document.createElement("div");
+    listItem.appendChild(secondaryDivTwo);
 
     //create checkbox + checkbox handling
 
@@ -75,10 +80,10 @@ function createTask () {
     let label = document.createElement("label");
     label.value = "";
 
-    //append checkbox and label to div
+    //append checkbox and label to secondary div 1
 
-    secondaryDiv.append(checkbox);
-    secondaryDiv.appendChild(label);
+    secondaryDivOne.append(checkbox);
+    secondaryDivOne.appendChild(label);
 
     // add inner text to label
 
@@ -92,7 +97,7 @@ function createTask () {
     editBtn.classList.add("edit-btn");
     editBtn.appendChild(editIcon);
 
-    listItem.appendChild(editBtn);
+    secondaryDivTwo.appendChild(editBtn);
 
     editIcon.classList.add("material-symbols-outlined");
     editIcon.innerHTML = "edit";
@@ -104,7 +109,7 @@ function createTask () {
     deleteBtn.classList.add("delete-btn");
     deleteBtn.appendChild(deleteIcon);
 
-    listItem.appendChild(deleteBtn);
+    secondaryDivTwo.appendChild(deleteBtn);
 
     deleteIcon.classList.add("material-icons");
     deleteIcon.innerHTML = "&#xe872;";
