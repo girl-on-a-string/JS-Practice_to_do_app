@@ -29,6 +29,10 @@ function createTask () {
     listItem.style.justifyContent = "space-between";
     taskContainer.appendChild(listItem);
 
+    //call task status so incomplete meter updates
+
+    taskStatus();
+
     //create secondary div container for checkbox and label
 
     let secondaryDiv = document.createElement("div");
@@ -47,7 +51,6 @@ function createTask () {
     strike.classList.add("strike");
 
     checkbox.addEventListener("click", () => {
-        taskStatus();
 
         checkbox.value = "checked";
         listItem.classList.remove("incomplete");
@@ -100,10 +103,6 @@ function createTask () {
         console.log(true);
     });
 
-    //update task status
-
-    // taskStatus();
-
     // validate request
 
     console.log(true);
@@ -120,8 +119,12 @@ function taskStatus () {
 
     incompleteAmt.innerHTML = numIncomplete;
 
-    while (document.getElementsByClassName("complete") == true) {
-        incompleteAmt -= 1;
+    // while (document.getElementsByClassName("complete") == true) {
+    //     incompleteAmt -= 1;
+    // }
+
+    if (document.getElementsByClassName("complete") == true) {
+        
     }
 }
 
