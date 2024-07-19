@@ -52,8 +52,8 @@ function createTask () {
     checkbox.value = "unchecked";
     checkbox.name = "completion-status";
 
-    let strike = document.createElement("div");
-    strike.classList.add("strike");
+    // let strike = document.createElement("div");
+    // strike.classList.add("strike");
 
     checkbox.addEventListener("click", () => {
 
@@ -61,16 +61,20 @@ function createTask () {
         listItem.classList.remove("incomplete");
         listItem.classList.add("complete");
 
-        listItem.appendChild(strike);
+        // listItem.appendChild(strike);
 
-        strike.style.animationPlayState = "running";
+        // strike.style.animationPlayState = "running";
 
-        let completedListItem = listItem.getElementsByClassName("strike");
+        // let completedListItem = listItem.getElementsByClassName("strike");
        // let allListItems = taskContainer.getElementsByClassName("list-item");
         // let lastItem = allListItems[allListItems.length-1];
         let lastItem = taskContainer.lastChild;
         lastItem.classList.add("last-child");
         //lastItem.appendChild(completedListItem);
+
+        //strike though animation
+
+
 
         //make task uneditable when completed
 
@@ -98,6 +102,7 @@ function createTask () {
 
     let listText = document.getElementById("input").value;
     label.innerText = listText;
+    label.classList.add("list-txt");
 
     //create edit button 
 
@@ -118,8 +123,8 @@ function createTask () {
 
         let totalOverlayContainer = document.createElement("div");
         totalOverlayContainer.setAttribute("id", "overlay-main-container");
-        totalOverlayContainer.style.display = "block";
         add.appendChild(totalOverlayContainer);
+        totalOverlayContainer.style.display = "block";
 
         let overlayContentBox = document.createElement("div");
         overlayContentBox.setAttribute("id", "overlay-content-box");
@@ -127,6 +132,7 @@ function createTask () {
 
         let overlayForm = document.createElement("form");
         overlayForm.setAttribute("id", "overlay-form");
+        overlayForm.classList.add("clickable");
         overlayContentBox.appendChild(overlayForm);
         overlayForm.addEventListener("click", (e) => {
             e.preventDefault();
@@ -134,14 +140,18 @@ function createTask () {
 
         let overlayInput = document.createElement("input");
         overlayInput.setAttribute("id", "overlay-input");
+        overlayInput.classList.add("clickable");
         overlayForm.appendChild(overlayInput);
         overlayInput = overlayInput.value;
 
         let overlaySumbitChange = document.createElement("button");
         overlaySumbitChange.setAttribute("id", "overlay-submit-btn");
+        overlaySumbitChange.classList.add("clickable");
         overlaySumbitChange.type = "submit";
         overlaySumbitChange.innerText = "Submit";
         overlayForm.appendChild(overlaySumbitChange);
+
+        //close when clicking something other than the input or button
 
 
     });
